@@ -1,0 +1,5 @@
+{% if site.logo %}
+  <div class="site-logo"></div>
+{% else %}
+  {{ site.title }} {% if site.is_te %} - {{ site.te_flag }} {% endif %}
+{% endif %}
