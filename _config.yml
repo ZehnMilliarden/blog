@@ -21,7 +21,7 @@ te_flag: 测试
 
 baseurl: "" # the subpath of your site, e.g. /blog
 #url: "https://git.lxf.science" # the base hostname & protocol for your site, e.g. http://example.com
-url: ""
+url: "https://git.lxf.science/blog/"
 repository: just-the-docs/just-the-docs # for github-metadata
 
 header_switch: false #
