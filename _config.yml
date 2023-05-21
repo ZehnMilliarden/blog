@@ -17,7 +17,7 @@ title: 糊涂塔克的博客
 hide_title: false
 description: 这里是糊涂塔克的博客
 
-is_te: false
+is_te: true
 te_flag: 测试
 
 baseurl: "/blog" # the subpath of your site, e.g. /blog
@@ -55,7 +55,7 @@ exclude:
    - Dockerfile
  # theme test code
    - fixtures/
-   - _tests/
+ # - _tests/
 
 # Set a path/url to a logo that will be displayed instead of the title
 #logo: "/assets/images/just-the-docs.png"
@@ -195,11 +195,11 @@ compress_html:
   #   envs: all
 
 collections:
-#  tests:
-#    permalink: "/:collection/:path/"
-#    output: true
+  tests:
+    permalink: "/:collection/:path/"
+    output: true
 
 just_the_docs:
   collections:
-#    tests:
-#      name: Tests
+    tests:
+      name: Tests
