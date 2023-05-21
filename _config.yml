@@ -20,8 +20,8 @@ description: 这里是糊涂塔克的博客
 is_te: false
 te_flag: 测试
 
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "https://git.lxf.science/"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://blog.lxf.science/"
 repository: just-the-docs/just-the-docs # for github-metadata
 
 header_switch: false #
