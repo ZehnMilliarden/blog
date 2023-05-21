@@ -198,8 +198,13 @@ collections:
 #  tests:
 #    permalink: "/:collection/:path/"
 #    output: true
+  cs:
+    permalink: "/:collection/:path/"
+    output: true
 
 just_the_docs:
   collections:
 #    tests:
 #      name: Tests
+    cs:
+      name: CS
