@@ -1,11 +1,12 @@
 <div class="side-bar">
+  {% if site.hide_title!=true %}
   <div class="site-header">
-    <!-- <a href="{{ '/' | relative_url }}" class="site-title lh-tight">{% include title.html %}</a> -->
     <div class="site-title lh-tight">{% include title.html %}</div>
     <a href="#" id="menu-button" class="site-button">
       <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
     </a>
   </div>
+  {% endif %}
   <nav aria-label="Main" id="site-nav" class="site-nav">
     {% assign pages_top_size = site.html_pages
           | where_exp:"item", "item.title != nil"
