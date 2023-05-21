@@ -13,14 +13,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: 糊涂塔克
-description: A theme for documentation
+title: 糊涂塔克的博客
+description: 这里是糊涂塔克的博客
 
-is_te: true
+is_te: false
 te_flag: 测试
 
 baseurl: "/blog" # the subpath of your site, e.g. /blog
-#url: "https://git.lxf.science" # the base hostname & protocol for your site, e.g. http://example.com
 url: "https://git.lxf.science/"
 repository: just-the-docs/just-the-docs # for github-metadata
 
@@ -55,7 +54,7 @@ exclude:
    - Dockerfile
  # theme test code
    - fixtures/
- # - _tests/
+   - _tests/
 
 # Set a path/url to a logo that will be displayed instead of the title
 #logo: "/assets/images/just-the-docs.png"
@@ -195,11 +194,11 @@ compress_html:
   #   envs: all
 
 collections:
-  tests:
-    permalink: "/:collection/:path/"
-    output: true
+#  tests:
+#    permalink: "/:collection/:path/"
+#    output: true
 
 just_the_docs:
   collections:
-    tests:
-      name: Tests
+#    tests:
+#      name: Tests
