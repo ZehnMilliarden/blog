@@ -194,6 +194,10 @@ compress_html:
   # ignore:
   #   envs: all
 
+cdn:
+  cdn001: https://cdn.jsdelivr.net/gh/ZehnMilliarden/cdn001
+  cdn001_raw: https://github.com/ZehnMilliarden/cdn001/blob/master 
+
 collections:
   cs:
     permalink: "/:collection/:path/"
