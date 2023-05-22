@@ -23,41 +23,55 @@ permalink: /cs/dev/ssh/login-without-pass
 
 ---
 
-### 准备工作
-1. 选择合适的ssh版本程序，注意，电脑上可能会有多份,例如 D:\TortoiseGit\bin\TortoiseGitPlink.exe，D:\Git\usr\bin\ssh.exe，C:\Windows\System32\OpenSSH\ssh.exe 等
-2. 使用 ssh-keygen -t rsa -C "备注"，生成 rsa秘钥对 （也可以使用 TortoiseGit自带的工具 PuttyGen生成）
-3. 生成 例如 xxx.pub和xxx 的秘钥对文件后 将 xxx.pub 文件或文件内容，拷贝到git或远程 sshd服务设备上
+### 生成SSH秘钥对
+1. 选择合适的SSH版本程序，注意电脑上可能会有多份，例如： 
+   - D:\TortoiseGit\bin\TortoiseGitPlink.exe
+   - D:\Git\usr\bin\ssh.exe
+   - C:\Windows\System32\OpenSSH\ssh.exe 等
 
-### 配置方案一
-1. 客户端本地 启动 ssh-agent的服务
-&emsp;1.1 如果使用系统自带的 ssh 需要，检查ssh-agent服务是否启动，windows 下 services.msc，查看服务 OpenSSH Authentication Agent （linux上），需要启动该服务
-&emsp;1.2如果不使用系统自带，使用git的ssh，则可使用命令 ssh-agent -s 启动服务，（TortoiseGit 未测试）
-2. 通过 ssh-add xxx （私钥全路径），将私钥添加到代理管理
-3. ssh 配置 文件配置 
-Host github （自定义命名，可以用这个名称替换目标域名或ip）
-          HostName github.com （主机名称，域名或ip）
-          User ZehnMilliarden （用户名）
-          IdentityFile ~/.ssh/xxx （对应用户名使用的 私钥）
-    *** 注意 host字段值，需要让git ssh链接地址里的host该成这个，否则ssh会失效，找不到私钥，设置 git remote这里
+2. 使用命令 `ssh-keygen -t rsa -C "备注"` 生成RSA秘钥对，也可以使用TortoiseGit自带的工具PuttyGen生成
 
-4. 可通过 ssh -T git@github.com 验证秘钥配置是否正确 
-      如果发现该步骤失败，1）需要检查是否使用了 同一份ssh程序，和 2）xxx 私钥路径是否正确，和3）config配置是否正确
+3. 生成例如 `xxx.pub` 和 `xxx` 的秘钥对文件后，将`xxx.pub`文件或文件内容拷贝到Git或远程SSHD服务设备上。
 
-5. 修改 git 配置，以前可能是使用的https协议下拉的，现在需要修改成 git协议的地址
-        例如：
-        [remote "origin"]
-        url = git@github.com:ZehnMilliarden/Poc.git
-        fetch = +refs/heads/*:refs/remotes/origin/*
+### 使用 SSH 认证连接 GitHub
 
-6. 如果使用  TortoiseGit 工具下拉代码或上传代码出现异常，例如 github No supported authentication methods available (server sent: 人 publickey)，可以检查下 TortoiseGit 配置使用的ssh文件版本
+为了更加安全地连接 GitHub，可以使用 SSH 认证方式。下面是该过程的详细步骤：
 
+1. 在客户端本地启动 ssh-agent 服务。如果使用系统自带的 SSH，需要检查 ssh-agent 服务是否启动。在 Windows 上，可以使用 services.msc 查看服务 OpenSSH Authentication Agent（在 Linux 上也是类似）。如果不使用系统自带的 SSH，可以使用 Git 的 SSH，并使用命令 `ssh-agent -s` 启动服务（TortoiseGit 未测试）。
+
+2. 使用 `ssh-add xxx` 命令（`xxx` 是私钥的全路径）将私钥添加到代理管理。
+
+3. 配置 SSH 配置文件。在该文件中，可以指定一个自定义的命名（例如 `github`），并设置 `HostName`（即目标域名或 IP）、`User`（即用户名）和 `IdentityFile`（即对应用户使用的私钥）。需要注意的是，`Host` 字段的值需要让 Git SSH 链接地址里的 `host` 替换成这个值，否则 SSH 会失效，找不到私钥。可以在 Git Remote 配置中设置这个值。
+
+4. 使用 `ssh -T git@github.com` 命令验证秘钥配置是否正确。如果验证失败，需要检查是否使用了同一份 SSH 程序，私钥路径是否正确以及配置文件是否正确。
+
+5. 修改 Git 配置。如果以前使用的是 HTTPS 协议拉取代码，现在需要修改成 Git 协议的地址。例如：
+
+   ```
+   [remote "origin"]
+   url = git@github.com:ZehnMilliarden/Poc.git
+   fetch = +refs/heads/*:refs/remotes/origin/*
+   ```
+
+6. 如果使用 TortoiseGit 工具拉取或上传代码出现异常，例如 GitHub 返回错误信息“no supported authentication methods available (server sent: publickey)”，可以检查 TortoiseGit 配置使用的 SSH 文件版本。
 
 <img src="{{site.cdn.cdn001}}/{{page.guid}}/1.png">
 
-### 配置方案二
-1. 通过puttygen将当前的私钥转为ppk格式(如果无法转换需要升级tortoisegit)
-2. 将设置 network 选项里 ssh client 设置为tortoisegitplink.exe
-3. 在git->remote 每个仓库地址的，puttykey设置为刚刚生成的ppk文件
-4. 运行Pageagent添加ppk文件
-5. 拉取新仓库时记得设置load putty key选项
+以上就是使用 SSH 认证连接 GitHub 的详细步骤。
+
+### 使用 TortoiseGit 连接 SSH
+
+下面是使用 TortoiseGit 连接 SSH 的步骤：
+
+1. 使用 puttygen 将当前的私钥转为 ppk 格式（如果无法转换需要升级 TortoiseGit）。
+
+2. 在 TortoiseGit 设置中，选择 Network 选项，将 SSH client 设置为 tortoisegitplink.exe。
+
+3. 在 Git 的 Remote 选项中，为每个仓库地址设置 puttykey，将其设置为刚刚生成的 ppk 文件。
+
+4. 运行 Pageant，添加 ppk 文件。
+
+5. 拉取新仓库时，记得设置 load putty key 选项。
+
+以上就是使用 TortoiseGit 连接 SSH 的全部步骤。
 
