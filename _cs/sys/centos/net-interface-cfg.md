@@ -6,7 +6,7 @@ description: ""
 guid: 5348a8d3-229c-4e18-8f20-542705176787
 parent: Centos
 grand_parent: 操作系统
-permalink: /cs/dev/ssh/login-without-pass
+permalink: /cs/sys/centos/net-interface-cfg
 ---
 
 # 网卡配置
