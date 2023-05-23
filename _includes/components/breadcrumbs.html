@@ -10,20 +10,20 @@
 
   {%- assign pages_list = site[page.collection]
       | default: site.html_pages
-      | where_exp: "item", "item.title != nil"
+      | where_exp: "item", "item.guid != nil"
       | where_exp: "item", "item.has_children != nil" -%}
 
   {%- if page.grand_parent -%}
     {%- assign parent_page = pages_list
-        | where: "title", page.parent
+        | where: "guid", page.parent
         | where: "parent", page.grand_parent
         | first -%}
     {%- assign grandparent_page = pages_list
-        | where: "title", page.grand_parent
+        | where: "guid", page.grand_parent
         | first -%}
   {%- else -%}
     {%- assign parent_page = pages_list
-        | where: "title", page.parent
+        | where: "guid", page.parent
         | where_exp: "item", "item.parent == nil"
         | first -%}
   {%- endif -%}
@@ -32,9 +32,9 @@
   <ol class="breadcrumb-nav-list">
   {% if page.parent -%}
   {%- if page.grand_parent %}
-    <li class="breadcrumb-nav-list-item"><a href="{{ grandparent_page.url | relative_url }}">{{ page.grand_parent }}</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="{{ grandparent_page.url | relative_url }}">{{ grandparent_page.title }}</a></li>
   {%- endif %}
-    <li class="breadcrumb-nav-list-item"><a href="{{ parent_page.url | relative_url }}">{{ page.parent }}</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="{{ parent_page.url | relative_url }}">{{ parent_page.title }}</a></li>
   {% endif -%}
     <li class="breadcrumb-nav-list-item"><span>{{ page.title }}</span></li>
   </ol>

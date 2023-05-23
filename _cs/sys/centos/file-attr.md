@@ -4,8 +4,8 @@ title: 文件属性
 nav_order: 2
 description: ""
 guid: 368b665e-8f42-4326-93f4-7bd70960cc07
-parent: Centos
-grand_parent: 操作系统
+parent: 852dac9b-15b3-4ce2-b368-415554849069
+grand_parent: c27b1703-af14-46c4-8839-d16a5c0be153
 permalink: /cs/sys/centos/file-attr
 ---
 

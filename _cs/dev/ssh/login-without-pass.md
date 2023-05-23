@@ -4,8 +4,8 @@ title: 免密登录
 nav_order: 1
 description: ""
 guid: 311126ec-78d6-4f05-9d4f-a1edf412acec
-parent: SSH
-grand_parent: 开发环境
+parent: 418642fe-3a9f-4493-ac04-5ef51732fa1b
+grand_parent: 053993f5-2abe-48ce-9037-0c4946e7b3c1
 permalink: /cs/dev/ssh/login-without-pass
 ---
 
