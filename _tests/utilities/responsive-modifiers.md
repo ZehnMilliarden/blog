@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Responsive Modifiers
-parent: Utilities
+parent: 4139a907-90bf-41fe-9db9-04657973f973
 ---
 
 # Responsive modifiers

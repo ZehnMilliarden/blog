@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Code with line numbers
-parent: Code
-grand_parent: UI Components
+parent: 488c495e-9149-4032-bf6d-bbe99600906f
+grand_parent: 7f348cc0-8f43-45a6-b756-083c50d3eab0
 permalink: tests/ui-components/code/line-numbers/
 ---
 

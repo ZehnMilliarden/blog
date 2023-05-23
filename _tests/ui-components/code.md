@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Code
-parent: UI Components
+parent: 7f348cc0-8f43-45a6-b756-083c50d3eab0
 has_children: true
 nav_order: 6
+guid: 488c495e-9149-4032-bf6d-bbe99600906f
 ---
 
 # Code

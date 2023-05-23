@@ -55,33 +55,33 @@
 <ul class="nav-list">
 {%- for node in first_level_pages -%}
     {%- unless node.nav_exclude -%}
-      <li class="nav-list-item{% if page.collection == include.key and page.url == node.url or page.grand_parent == node.title or page.parent == node.title and page.grand_parent == nil %} active{% endif %}">
+      <li class="nav-list-item{% if page.collection == include.key and page.url == node.url or page.grand_parent == node.guid or page.parent == node.guid and page.grand_parent == nil %} active{% endif %}">
         {%- if node.has_children -%}
-          <a href="#" class="nav-list-expander" aria-label="toggle links in {{ node.title }} category">
+          <a href="#" class="nav-list-expander" aria-label="toggle links in {{ node.guid }} category">
             <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
           </a>
         {%- endif -%}
         <a href="{{ node.url | relative_url }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}">{{ node.title }}</a>
         {%- if node.has_children -%}
           {%- assign children_list = second_level_pages
-                | where: "parent", node.title -%}
+                | where: "parent", node.guid -%}
           {%- if node.child_nav_order == 'desc' or node.child_nav_order == 'reversed' -%}
             {%- assign children_list = children_list | reverse -%}
           {%- endif -%}
           <ul class="nav-list">
           {%- for child in children_list -%}
             {%- unless child.nav_exclude -%}
-            <li class="nav-list-item {% if page.url == child.url or page.parent == child.title %} active{% endif %}">
+            <li class="nav-list-item {% if page.url == child.url or page.parent == child.guid %} active{% endif %}">
               {%- if child.has_children -%}
-                <a href="#" class="nav-list-expander" aria-label="toggle links in {{ child.title }} category">
+                <a href="#" class="nav-list-expander" aria-label="toggle links in {{ child.guid }} category">
                   <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
                 </a>
               {%- endif -%}
               <a href="{{ child.url | relative_url }}" class="nav-list-link{% if page.url == child.url %} active{% endif %}">{{ child.title }}</a>
               {%- if child.has_children -%}
                 {%- assign grand_children_list = third_level_pages
-                      | where: "parent", child.title
-                      | where: "grand_parent", node.title -%}
+                      | where: "parent", child.guid
+                      | where: "grand_parent", node.guid -%}
                 {%- if child.child_nav_order == 'desc' or child.child_nav_order == 'reversed' -%}
                   {%- assign grand_children_list = grand_children_list | reverse -%}
                 {%- endif -%}

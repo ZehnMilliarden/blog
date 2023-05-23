@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Typography
-parent: UI Components
+parent: 7f348cc0-8f43-45a6-b756-083c50d3eab0
 nav_order: 1
 ---
 

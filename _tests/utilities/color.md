@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Color
-parent: Utilities
+parent: 4139a907-90bf-41fe-9db9-04657973f973
 ---
 
 # Color Utilities
