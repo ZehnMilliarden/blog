@@ -209,6 +209,6 @@ collections:
 just_the_docs:
   collections:
     cs:
-      name: CS
+      name: 计算机
     tests:
       name: Tests
