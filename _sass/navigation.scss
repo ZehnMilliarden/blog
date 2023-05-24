@@ -137,7 +137,7 @@
   text-align: start;
   text-transform: uppercase;
   border-bottom: $border $border-color;
-  @include fs-2;
+  @include fs-3;
 
   @include mq(md) {
     padding: $sp-2 $gutter-spacing;
