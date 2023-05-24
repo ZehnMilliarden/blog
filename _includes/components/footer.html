@@ -1,6 +1,9 @@
 {% capture footer_custom %}
   {%- include footer_custom.html -%}
 {% endcapture %}
+
+{% if page.footer_switch != false  %}
+
 {% if footer_custom != "" or site.last_edit_timestamp or site.gh_edit_link %}
   <hr>
   <footer>
@@ -32,3 +35,5 @@
     {% endif %}
   </footer>
 {% endif %}
+
+{% endif  %}
