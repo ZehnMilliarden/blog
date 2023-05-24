@@ -61,6 +61,23 @@ parent: d51dd9fb-857d-4bef-83f0-ed449e8aeb3d
 ## 常用的一些指令
 1. `!analyze -v` 自动加载符号表分析dmp文件
 2. `k`,`kb`,`kvn` 显示当前线程的堆栈
-- k命令：用于显示当前线程和堆栈跟踪中的函数调用。它可以显示每个函数调用的参数和局部变量。k命令是最基本的调试命令。
-- kb命令：与k命令类似，但它还会显示函数调用的调用者信息。
-- kvn命令：与k命令类似，但它可以显示函数调用的详细信息，包括完整的符号信息和源代码行号。它还可以显示函数调用的参数和局部变量的值。
+- `k`命令：用于显示当前线程和堆栈跟踪中的函数调用。它可以显示每个函数调用的参数和局部变量。`k`命令是最基本的调试命令。
+- `kb`命令：与k命令类似，但它还会显示函数调用的调用者信息。
+- `kvn`命令：与k命令类似，但它可以显示函数调用的详细信息，包括完整的符号信息和源代码行号。它还可以显示函数调用的参数和局部变量的值。
+3. 如果使用32位的windbg，windbg加载完dump文件后，窗口会显示wow64cpu，表示是64位进程，需要切换到64位环境：
+   ```
+   .load wow64exts
+   !sw
+   ```
+4. 切换调用帧当前线程的第X帧
+   ```
+   kvn
+   .frame x
+   ```
+5. `!peb` 格式化输出PEB信息
+6. `lm` 查看所有模块, `lmvm xxx` 查看xxx模块的详细信息，xxx模块不要带后缀名
+7. `?` 打印所有标准命令，`.help` 打印所有元命令，`.extmatch *` 列出所有扩展命令
+
+## 其他资料
+1. 中文在线帮助：<a href="http://www.dbgtech.net/windbghelp/index.html">http://www.dbgtech.net/windbghelp/index.html</a>
+2. 下载和安装教程：<a href="https://learn.microsoft.com/zh-CN/windows-hardware/drivers/debugger/">https://learn.microsoft.com/zh-CN/windows-hardware/drivers/debugger/</a>
