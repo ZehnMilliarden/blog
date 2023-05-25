@@ -196,7 +196,7 @@ compress_html:
 
 cdn:
   cdn001: https://cdn.jsdelivr.net/gh/ZehnMilliarden/cdn001
-  cdn001_raw: https://github.com/ZehnMilliarden/cdn001/blob/master 
+  cdn001_raw: https://raw.githubusercontent.com/ZehnMilliarden/cdn001/master
 
 collections:
 #  tests:
