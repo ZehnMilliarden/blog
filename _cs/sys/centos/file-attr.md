@@ -10,7 +10,6 @@ permalink: /cs/sys/centos/file-attr
 ---
 
 # Linux文件属性
-
 {: .no_toc }
 
 <details open markdown="block">
