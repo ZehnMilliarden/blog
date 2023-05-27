@@ -8,6 +8,9 @@ back_to_top: false
 guid: ec08099c-add8-42bb-914d-873eb54f0799
 footer_switch: false
 ---
-莫等闲，<br />
-白了少年头，<br />
-空悲切。
+
+<div class="index_words">
+  莫等闲，<br>
+  白了少年头，<br>
+  空悲切。
+</div>

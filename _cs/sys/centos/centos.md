@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Centos
+title: CENTOS
 nav_order: 1
 description: ""
 permalink: /cs/sys/centos
