@@ -23,3 +23,31 @@ permalink: /cs/dev/vscode/rust
 
 ---
 
+## Rust 安装 (Windows)
+1. 运行 rustup-init.exe 前先执行以下命令，设置环境变量，加速下载
+```
+  set CARGO_HOME=D:\Rust\.cargo
+  set RUSTUP_HOME=D:\Rust\.rustup
+  set RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+  set RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+```
+分别设置了安装目录，和下载镜像地址，设置好后，回车安装即可
+
+2. 安装完成后
+在 `%CARGO_HOME%` 目录创建文件 config, 该文件没有后缀, 内容填写如下
+```
+[registry]
+index = "https://mirrors.ustc.edu.cn/crates.io-index/"
+[source.crates-io]
+replace-with = 'ustc'
+[source.ustc]
+registry = "https://mirrors.ustc.edu.cn/crates.io-index/"
+```
+
+3. 环境变量配置
+在系统属性环境变量中添加如下信息。<br />
+CARGO_HOME=D:\Rust\.cargo <br />
+RUSTUP_HOME=D:\Rust\.rustup <br />
+RUSTUP_DIST_SERVER=http://mirrors.ustc.edu.cn/rust-static <br />
+RUSTUP_UPDATE_ROOT=http://mirrors.ustc.edu.cn/rust-static/rustup <br />
+PATH 中追加 %CARGO_HOME%\bin <br />
