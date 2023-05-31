@@ -30,5 +30,5 @@ guid: f6305dbe-fc3a-4286-b618-df6c9e2433c1
 - [Awesome](https://github.com/avelino/awesome-go#readme){:target="_blank"}
 
 ### 知识点导图
-<img src="{{site.cdn.cdn001}}/{{page.guid}}/1.png">
-<img src="{{site.cdn.cdn001}}/{{page.guid}}/2.png">
+<img src="{{site.cdn.cdn001}}/{{page.guid}}/3.png">
+<img src="{{site.cdn.cdn001}}/{{page.guid}}/4.png">
