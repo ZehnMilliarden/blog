@@ -46,8 +46,8 @@ registry = "https://mirrors.ustc.edu.cn/crates.io-index/"
 
 3. 环境变量配置
 在系统属性环境变量中添加如下信息。<br />
-CARGO_HOME=D:\Rust\.cargo <br />
-RUSTUP_HOME=D:\Rust\.rustup <br />
+CARGO_HOME=D:\Rust\\.cargo <br />
+RUSTUP_HOME=D:\Rust\\.rustup <br />
 RUSTUP_DIST_SERVER=http://mirrors.ustc.edu.cn/rust-static <br />
 RUSTUP_UPDATE_ROOT=http://mirrors.ustc.edu.cn/rust-static/rustup <br />
 PATH 中追加 %CARGO_HOME%\bin <br />
