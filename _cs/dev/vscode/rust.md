@@ -37,7 +37,7 @@ permalink: /cs/dev/vscode/rust
 在 `%CARGO_HOME%` 目录创建文件 config, 该文件没有后缀, 内容填写如下
 ```
 [source.crates-io]
-registry = "https://mirrors.ustc.edu.cn/crates.io-index/"
+registry = "https://github.com/rust-lang/crates.io-index"
 replace-with = 'ustc'
 [source.ustc]
 registry = "https://mirrors.ustc.edu.cn/crates.io-index/"
