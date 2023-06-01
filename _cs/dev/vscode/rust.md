@@ -36,9 +36,8 @@ permalink: /cs/dev/vscode/rust
 2. 安装完成后
 在 `%CARGO_HOME%` 目录创建文件 config, 该文件没有后缀, 内容填写如下
 ```
-[registry]
-index = "https://mirrors.ustc.edu.cn/crates.io-index/"
 [source.crates-io]
+registry = "https://mirrors.ustc.edu.cn/crates.io-index/"
 replace-with = 'ustc'
 [source.ustc]
 registry = "https://mirrors.ustc.edu.cn/crates.io-index/"
@@ -51,3 +50,68 @@ RUSTUP_HOME=D:\Rust\\.rustup <br />
 RUSTUP_DIST_SERVER=http://mirrors.ustc.edu.cn/rust-static <br />
 RUSTUP_UPDATE_ROOT=http://mirrors.ustc.edu.cn/rust-static/rustup <br />
 PATH 中追加 %CARGO_HOME%\bin <br />
+
+4. 创建工程
+```
+cargo new greeting
+```
+
+## VSCode 配置
+1. 安装插件 rust-analyzer 和 Native Debug
+2. tasks.json 配置
+```
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "build"
+            ]
+        }
+    ]
+}
+```
+
+3. launch.json 配置
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(Windows)启动",
+            "preLaunchTask": "build",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/target/debug/${workspaceFolderBasename}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false
+        },
+        {
+            "name": "(gdb)启动",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/target/debug/${workspaceFolderBasename}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "这里填GDB所在的目录",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
+```
