@@ -71,7 +71,7 @@ lo 网卡是网络回环地址，不用管。ens32 网卡属于第二种网卡�
 
 ## 网卡配置解释
 
-```
+```conf
 DEVICE="ens32" 
 TYPE="Ethernet"
 PROXY_METHOD="none"
@@ -119,7 +119,7 @@ USERCTL=yes/no
 
 以下配置 BOOTPROTO="static"，当 IP 配置为静态 IP 时生效。
 
-```
+```conf
 IPADDR=192.168.31.128
 GATEWAY=192.168.31.2
 DNS1=192.168.31.2
@@ -131,7 +131,7 @@ DNS1=192.168.31.2
 
 ## 参考配置
 
-```
+```conf
 DEVICE="ens32"
 TYPE="Ethernet"
 PROXY_METHOD="none"

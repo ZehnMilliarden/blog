@@ -23,12 +23,16 @@ permalink: /cs/dev/gitlab
 ---
 
 ## 安装依赖
-    yum -y install policycoreutils openssh-server openssh-clients postﬁx policycoreutils-python
-    systemctl enable sshd && sudo systemctl start sshd
-    systemctl enable postfix && systemctl start postfix
+```bash
+yum -y install policycoreutils openssh-server openssh-clients postﬁx policycoreutils-python
+systemctl enable sshd && sudo systemctl start sshd
+systemctl enable postfix && systemctl start postfix
+```
 
 ## 安装git包
-    rpm -ivh gitlab-ce-12.4.2-ce.0.el6.x86_64.rpm
+```bash
+rpm -ivh gitlab-ce-12.4.2-ce.0.el6.x86_64.rpm
+```
 
 ## 重新配置gitlab
     vim /etc/gitlab/gitlab.rb
@@ -37,14 +41,20 @@ permalink: /cs/dev/gitlab
     nginx['listen_port']=80 # 或者 443 端口
 
 ## gitlab 进行重新配置，重启gitlab 服务
-    gitlab-ctl reconfigure && gitlab-ctl restart
+```bash
+gitlab-ctl reconfigure && gitlab-ctl restart
+```
 
 ## 开放端口 
-    firewall-cmd --zone=public --add-port=80/tcp --permanent
+```bash
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+```
 
 ## 修改密码
-    gitlab-rails console -e production
-    user = User.where(id: 1).first （此User为root用户）
-    user.password = 'secret_pass' user.password_confirmation = 'secret_pass'
-    user.save!
-    exit
+```bash
+gitlab-rails console -e production
+user = User.where(id: 1).first （此User为root用户）
+user.password = 'secret_pass' user.password_confirmation = 'secret_pass'
+user.save!
+exit
+```

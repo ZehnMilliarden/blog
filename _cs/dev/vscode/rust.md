@@ -35,7 +35,7 @@ permalink: /cs/dev/vscode/rust
 
 2. 安装完成后
 在 `%CARGO_HOME%` 目录创建文件 config, 该文件没有后缀, 内容填写如下
-```
+```ini
 [source.crates-io]
 registry = "https://github.com/rust-lang/crates.io-index"
 replace-with = 'ustc'
@@ -52,14 +52,14 @@ RUSTUP_UPDATE_ROOT=http://mirrors.ustc.edu.cn/rust-static/rustup <br />
 PATH 中追加 %CARGO_HOME%\bin <br />
 
 4. 创建工程
-```
+```sh
 cargo new greeting
 ```
 
 ## VSCode 配置
 1. 安装插件 rust-analyzer 和 Native Debug
 2. tasks.json 配置
-```
+```json
 {
     "version": "2.0.0",
     "tasks": [
@@ -76,7 +76,7 @@ cargo new greeting
 ```
 
 3. launch.json 配置
-```
+```json
 {
     "version": "0.2.0",
     "configurations": [

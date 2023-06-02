@@ -93,7 +93,7 @@ permalink: /cs/dev/vscode/cpp
 ### VSCode 环境配置
 
 1. tasks.json
-```
+```json
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -147,7 +147,7 @@ permalink: /cs/dev/vscode/cpp
 ```
 
 2. launch.json
-```
+```json
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
@@ -226,14 +226,14 @@ permalink: /cs/dev/vscode/cpp
 ```
 
 3. setting.json
-```
+```json
 {
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
 }
 ```
 
 ### 构建脚本 build.sh
-```
+```sh
 #!/bin/sh
 BUILD_type=$1
 ORIGIN_PATH=${pwd}
