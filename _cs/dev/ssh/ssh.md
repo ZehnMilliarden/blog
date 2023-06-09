@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SSH
+title: Secure Shell
 nav_order: 2
 description: ""
 permalink: /cs/dev/ssh

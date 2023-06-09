@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GITLAB
+title: GitLab
 nav_order: 3
 description: ""
 guid: e5837de6-dcd8-406e-9556-b7f626bc633f
