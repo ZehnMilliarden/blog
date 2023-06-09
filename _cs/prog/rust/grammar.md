@@ -75,11 +75,57 @@ impl StructName {
         return v;
     }
 }
+trait AbstractStructMember {
+    fn GetAbstractMember1(&self) -> i32;
+    fn ModifyAbstractMember1(&mut self, target: i32);
+}
+impl AbstractStructMember for StructName {
+    fn GetAbstractMember1(&self) -> i32
+    {
+        return self.Member1;
+    }
+
+    fn ModifyAbstractMember1(&mut self, target: i32)
+    {
+        self.Member1 = target;
+    }
+}
+trait AbstractStructMember2 {
+    fn GetAbstractMember2(&self) -> u8;
+    fn ModifyAbstractMember2(&mut self, target: u8);
+}
+impl AbstractStructMember2 for StructName {
+    fn GetAbstractMember2(&self) -> u8
+    {
+        return self.Member2;
+    }
+
+    fn ModifyAbstractMember2(&mut self, target: u8)
+    {
+        self.Member2 = target;
+    }
+}
+fn CallBack(object: &mut impl AbstractStructMember)
+{
+    object.ModifyAbstractMember1(100);
+}
+fn CallBack2<T>(object: &mut T)
+where 
+    T: AbstractStructMember + AbstractStructMember2
+{
+    object.ModifyAbstractMember1(1000);
+    object.ModifyAbstractMember2(200);
+}
 fn main() {
     let mut vv: StructName = StructName::create();
     println!("{:?}", vv);
     vv.modify_member(&String::from("target"));
-    println!("{}", vv.get_member());
+    vv.ModifyAbstractMember1(10);
+    println!("{}, {}", vv.GetMember(), vv.GetAbstractMember1());
+    CallBack(&mut vv);
+    println!("{}, {}", vv.GetMember(), vv.GetAbstractMember1());
+    CallBack2(&mut vv);
+    println!("{}, {}, {}", vv.GetMember(), vv.GetAbstractMember1(), vv.GetAbstractMember2());
 }
 ```
 
@@ -109,5 +155,26 @@ match opt {
         println!("some_value: {}", some_value);
     },
     Option::None => println!("None") // let opt = Option::None
+}
+```
+
+## 生命周期
+```rust
+fn longer<'live>(s1: &'live str, s2: &'live str) -> &'live str {
+    if s2.len() > s1.len() {
+        s2
+    } else {
+        s1
+    }
+}
+fn main()
+{
+    let r;
+    {
+        let s1 = "rust";
+        let s2 = "ecmascript";
+        r = longer(s1, s2);
+    }
+    println!("{} is longer", r);
 }
 ```
