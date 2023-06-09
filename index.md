@@ -9,7 +9,7 @@ guid: ec08099c-add8-42bb-914d-873eb54f0799
 footer_switch: false
 ---
 
-<div class="index_words">
+<div class="index-words">
   莫等闲，<br>
   白了少年头，<br>
   空悲切。
