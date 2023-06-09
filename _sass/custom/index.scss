@@ -1,13 +1,16 @@
+// Utility classes for first page
+
+// First page Font Style
+
 .index-words {
-    font-family: fangsong, sans-serif;
-    font-size: 20px;
-    line-height: 1.5em;
-    text-align: left;
+  font-family: fangsong, sans-serif;
+  font-size: 20px;
+  line-height: 1.5em;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .index-words {
+    text-align: center;
   }
-  
-  @media (max-width: 767px) {
-    .index-words {
-      text-align: center;
-    }
-  }
-  
+}
