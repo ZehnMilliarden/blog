@@ -1,12 +1,12 @@
 .index-words {
-  font-family: fangsong, sans-serif;
-  font-size: 20px;
-  line-height: 1.5em;
-  text-align: left;
-}
-
-@media (max-width: 767px) {
-  .index-words {
-    text-align: center;
+    font-family: fangsong, sans-serif;
+    font-size: 20px;
+    line-height: 1.5em;
+    text-align: left;
   }
-}
+  
+  @media (max-width: 767px) {
+    .index-words {
+      text-align: center;
+    }
+  }
