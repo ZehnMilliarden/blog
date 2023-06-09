@@ -1,14 +1,12 @@
 .index-words {
-  font-family: FangSong;
+  font-family: fangsong;
   font-size: 20px;
   line-height: 1.5em;
   text-align: left;
-  /* 在PC上显示为靠左 */
 }
 
 @media (max-width: 767px) {
   .index-words {
     text-align: center;
-    /* 在手机上显示为居中 */
   }
 }
