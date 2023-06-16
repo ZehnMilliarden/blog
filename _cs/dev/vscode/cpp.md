@@ -92,7 +92,7 @@ permalink: /cs/dev/vscode/cpp
 
 ### VSCode 环境配置
 
-1. tasks.json
+1. launch.json
 ```json
 {
     "version": "0.2.0",
@@ -143,7 +143,7 @@ permalink: /cs/dev/vscode/cpp
 }
 ```
 
-2. launch.json
+2. tasks.json
 ```json
 {
     "version": "2.0.0",
