@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 编程开发
-nav_order: 4
+nav_order: 1
 description: ""
 permalink: /cs/prog
 has_children: true
