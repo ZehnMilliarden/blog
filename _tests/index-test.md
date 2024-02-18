@@ -314,3 +314,8 @@ graph TD;
 ```
 The final element.
 ```
+
+### 部署
+- gem install jekyll bundler # 安装 jekyll 和 bundler
+- bundle install # 安装项目依赖
+- bundle exec jekyll serve # 启动项目
