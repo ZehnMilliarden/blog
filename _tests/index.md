@@ -74,6 +74,11 @@ Just the Docs is committed to fostering a welcoming community.
 
 [View our Code of Conduct](https://github.com/just-the-docs/just-the-docs/tree/main/CODE_OF_CONDUCT.md) on our GitHub repository.
 
+### 部署
+- gem install jekyll bundler # 安装 jekyll 和 bundler
+- bundle install # 安装项目依赖
+- bundle exec jekyll serve # 启动项目
+
 ----
 
 [^1]: The [source file for this page] uses all three markup languages.
@@ -94,3 +99,4 @@ Just the Docs is committed to fostering a welcoming community.
 [Template README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
 [GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
 [use the template]: https://github.com/just-the-docs/just-the-docs-template/generate
+
