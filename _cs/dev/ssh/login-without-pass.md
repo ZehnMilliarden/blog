@@ -37,13 +37,13 @@ permalink: /cs/dev/ssh/login-without-pass
 
 为了更加安全地连接 GitHub，可以使用 SSH 认证方式。下面是该过程的详细步骤：
 
-1. 在客户端本地启动 ssh-agent 服务。如果使用系统自带的 SSH，需要检查 ssh-agent 服务是否启动。在 Windows 上，可以使用 services.msc 查看服务 OpenSSH Authentication Agent（在 Linux 上也是类似）。如果不使用系统自带的 SSH，可以使用 Git 的 SSH，并使用命令 `ssh-agent -s` 启动服务（TortoiseGit 未测试）。
+1. 在客户端本地启动 ssh-agent 服务。如果使用系统自带的 SSH，需要检查 ssh-agent 服务是否启动。在 Windows 上，可以使用 services.msc 查看服务 OpenSSH Authentication Agent（在 Linux 上也是类似）。如果不使用系统自带的 SSH，可以使用 Git 的 SSH，并使用命令 `ssh-agent -s` 启动服务（TortoiseGit 未测试）。在Windows 7系统上可以在命令行终端执行ssh-agent bash然后再执行ssh-add命令将私钥匙添加进代理中。再添加完秘钥后记得配置下.ssh/config 文件，将秘钥和站点进行关联。
 
 2. 使用 `ssh-add xxx` 命令（`xxx` 是私钥的全路径）将私钥添加到代理管理。
 
 3. 配置 SSH 配置文件。在该文件中，可以指定一个自定义的命名（例如 `github`），并设置 `HostName`（即目标域名或 IP）、`User`（即用户名）和 `IdentityFile`（即对应用户使用的私钥）。需要注意的是，`Host` 字段的值需要让 Git SSH 链接地址里的 `host` 替换成这个值，否则 SSH 会失效，找不到私钥。可以在 Git Remote 配置中设置这个值。
 
-4. 使用 `ssh -T git@github.com` 命令验证秘钥配置是否正确。如果验证失败，需要检查是否使用了同一份 SSH 程序，私钥路径是否正确以及配置文件是否正确。
+4. 使用 `ssh -T git@github.com` 命令验证秘钥配置是否正确。如果验证失败，需要检查是否使用了同一份 SSH 程序，私钥路径是否正确以及配置文件是否正确。如果在系统命令终端中无效，可以在ssh-agent base 中再尝试下。
 
 5. 修改 Git 配置。如果以前使用的是 HTTPS 协议拉取代码，现在需要修改成 Git 协议的地址。例如：
 
