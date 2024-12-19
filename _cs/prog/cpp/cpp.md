@@ -1,15 +1,15 @@
 ---
 layout: default
-title: CPlusPlus
+title: Cpp
 nav_order: 3
 description: ""
 permalink: /cs/prog/cpp
-has_children: false
+has_children: true
 parent: a46c73a3-f86b-4e8b-b199-9facf2d95e9d
 guid: 4520f81a-f907-4e87-a475-da668552ad52
 ---
 
-# Rust
+# CPP
 {: .no_toc }
 
 <details open markdown="block">

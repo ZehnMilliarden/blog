@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Go
-nav_order: 2
+nav_order: 1
 description: ""
 permalink: /cs/prog/go
 has_children: false
