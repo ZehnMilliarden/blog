@@ -25,3 +25,7 @@ permalink: /cs/other/web/blog
 
 ### 特殊工具
 - [qiqiboke.com](https://www.qiqiboke.com/){:target="_blank"}
+
+### 参考资料
+- [PDF标准 翻译](https://zxyle.github.io/PDF-Explained/){:target="_blank"}
+- [PDF标准 官方(1.7)](https://opensource.adobe.com/dc-acrobat-sdk-docs/pdfstandards/pdfreference1.7old.pdf){:target="_blank"}
